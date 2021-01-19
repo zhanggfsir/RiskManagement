@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+    <file>
+        <IsHDFS>true</IsHDFS>
+        <HdfsAddress>hdfs://beh/</HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath></LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>5</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>5</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+
+    <column>
+         <!-- 手机号码（明文）telNo -->
+		<rowkey>0</rowkey><!-- 取第几个字段作rowkey，多个则以'逗号'分隔 -->
+		<column1>1</column1><!-- 标签columnX,X代表第几个字段，值代表本列取第几个字段作为结果 -->
+		<column2>2</column2><!-- 标签columnX,X代表第几个字段，值代表本列取第几个字段作为结果 -->
+		<column3>3</column3><!-- 标签columnX,X代表第几个字段，值代表本列取第几个字段作为结果 -->
+		<column4>4</column4>
+	</column>
+
+
+    <table>
+        <TableName>duxiaoman201902</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

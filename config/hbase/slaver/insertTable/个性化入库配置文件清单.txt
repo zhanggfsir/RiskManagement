@@ -1,0 +1,13 @@
+国信优易信用分		insert-table-config-gxlx-score-result-bak.xml
+宁波银行白名单		insert-table-config-nbyh-risk-manager-bak.xml
+南京安迅信用分		insert-table-config-axon-score-bak.xml
+通信信用分			insert-table-config-unicom-score-bak.xml
+恶意卡验证			insert-table-config-black-card-result-bak.xml
+晋景数据模型分		insert-table-config-jinjing-score-bak.xml
+京东金融			insert-table-config-jdjr-bak.xml
+阿里安全值			insert-table-config-alibaba-score-bak.xml
+电话邦信用分		insert-table-config-collection-score-bak.xml
+电话邦读秒分		insert-table-config-seconds-score-bak.xml
+携号转网			insert-table-config-np-turn-bak.xml
+智慧足记			insert-table-config-off-home-work-bak.xml
+智慧足记（MD5）		insert-table-config-off-home-worken-bak.xml

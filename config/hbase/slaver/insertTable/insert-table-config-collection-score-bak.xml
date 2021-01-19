@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+    <file>
+        <IsHDFS>true</IsHDFS>
+        <HdfsAddress>hdfs://beh/</HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath></LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>44</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>gz</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+       <column>
+        <!-- 服务号码 sendTel -->
+        <rowkey>0</rowkey> 
+        <!-- 综合分 mainScore -->
+        <column1>1</column1> 
+        <!-- (催收)最近一次通话时间 cs_latest_phone_time -->
+        <column2>2</column2> 
+        <!-- (催收)首次通话时间 cs_first_phone_time -->
+        <column3>3</column3> 
+        <!-- (催收)最近一次通话时间间隔（天）cs_latest_phone_days -->
+        <column4>4</column4> 
+        <!-- (催收)首次通话时间间隔（天）cs_first_phone_days -->
+        <column5>5</column5> 
+        <!-- (催收)通话号码总个数 cs_phone_numbers -->
+        <column6>6</column6> 
+        <!-- (催收)总通话次数 cs_total_phone_times -->
+        <column7>7</column7> 
+        <!-- (催收)被叫次数 cs_called_times -->
+        <column8>8</column8> 
+        <!-- (催收)通话时长15秒以下的次数 cs_phone_times_in_15s -->
+        <column9>9</column9> 
+        <!-- (催收)通话时长15-30秒的次数 cs_phone_times_between_15_30s -->
+        <column10>10</column10> 
+        <!-- (催收)通话时长60秒以上的次数 cs_phone_times_over_60s -->
+        <column11>11</column11> 
+        <!-- (疑似催收)最近一次通话时间 yscs_latest_phone_time -->
+        <column12>12</column12> 
+        <!-- (疑似催收)首次通话时间 yscs_first_phone_time -->
+        <column13>13</column13> 
+        <!-- (疑似催收)最近一次通话时间间隔 yscs_latest_phone_days -->
+        <column14>14</column14> 
+        <!-- (疑似催收)首次通话时间间隔 yscs_first_phone_days -->
+        <column15>15</column15> 
+        <!-- (疑似催收)通话号码总个数 yscs_phone_numbers -->
+        <column16>16</column16> 
+        <!-- (疑似催收)总通话次数 yscs_total_phone_times -->
+        <column17>17</column17> 
+        <!-- (疑似催收)被叫次数 yscs_called_times -->
+        <column18>18</column18> 
+        <!-- (疑似催收)通话时长15秒以下的次数 yscs_phone_times_in_15s -->
+        <column19>19</column19> 
+        <!-- (疑似催收)通话时长15-30秒的次数 yscs_phone_times_between_15_30s -->
+        <column20>20</column20> 
+        <!-- (疑似催收)通话时长60秒以上的次数 yscs_phone_times_over_60s -->
+        <column21>21</column21> 
+        <!-- (近一周)(催收)通话号码总个数 cs_phone_numbers_in_7_days -->
+        <column22>22</column22> 
+        <!-- (近一周)(催收)被叫次数 cs_called_times_in_7_days -->
+        <column23>23</column23> 
+        <!-- (近一周)(疑似催收)通话号码总个数 yscs_phone_numbers_in_7_days -->
+        <column24>24</column24> 
+        <!-- (近一周)(疑似催收)被叫次数 yscs_called_times_in_7_days -->
+        <column25>25</column25> 
+        <!-- (近二周)(催收)通话号码总个数 cs_phone_numbers_in_14_days -->
+        <column26>26</column26> 
+        <!-- (近二周)(催收)被叫次数 cs_called_times_in_14_days -->
+        <column27>27</column27> 
+        <!-- (近二周)(疑似催收)通话号码总个数 yscs_phone_numbers_in_14_days -->
+        <column28>28</column28> 
+        <!-- (近二周)(疑似催收)被叫次数 yscs_called_times_in_14_days -->
+        <column29>29</column29> 
+        <!-- (近三周)(催收)通话号码总个数 cs_phone_numbers_in_21_days -->
+        <column30>30</column30> 
+        <!-- (近三周)(催收)被叫次数 cs_called_times_in_21_days -->
+        <column31>31</column31> 
+        <!-- (近三周)(疑似催收)通话号码总个数 yscs_phone_numbers_in_21_days -->
+        <column32>32</column32> 
+        <!-- (近三周)(疑似催收)被叫次数 yscs_called_times_in_21_days -->
+        <column33>33</column33> 
+        <!-- (近30个自然日)(催收)通话号码总个数 cs_phone_numbers_in_30_days -->
+        <column34>34</column34> 
+        <!-- (近30个自然日)(催收)被叫次数 cs_called_times_in_30_days -->
+        <column35>35</column35> 
+        <!-- (近30个自然日)(疑似催收)通话号码总个数 yscs_phone_numbers_in_30_days -->
+        <column36>36</column36> 
+        <!-- (近30个自然日)(疑似催收)被叫次数 yscs_called_times_in_30_days -->
+        <column37>37</column37> 
+        <!-- (近30-60个自然日)(催收)通话号码总个数 cs_phone_numbers_between_30_60_days -->
+        <column38>38</column38> 
+        <!-- (近30-60个自然日)(催收)被叫次数 cs_called_times_between_30_60_days -->
+        <column39>39</column39> 
+        <!-- (近30-60个自然日)(疑似催收)通话号码总个数 yscs_phone_numbers_between_30_60_days -->
+        <column40>40</column40> 
+        <!-- (近30-60个自然日)(疑似催收)被叫次数 yscs_called_times_between_30_60_days -->
+        <column41>41</column41> 
+        <!-- 催收库 cuishou_db -->
+        <column42>42</column42> 
+        <!-- 结果对应日期 handle_time -->
+        <column43>43</column43> 
+   </column>
+    <table>
+        <TableName>collection_score</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

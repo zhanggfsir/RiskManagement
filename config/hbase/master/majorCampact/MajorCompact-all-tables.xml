@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <!--用于HBase主库做compaction -->
+    <table>
+        <TableName>all_tables_test</TableName><!-- 表名 -->
+    </table>
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_zx</Parent><!-- hbase在zookeeper的存储路径 -->
+    </zookeeper>
+</root>

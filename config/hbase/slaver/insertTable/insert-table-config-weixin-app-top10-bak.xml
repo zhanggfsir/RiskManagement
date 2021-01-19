@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<!--微信服务号APP流量-->
+    <file>
+        <IsHDFS>false</IsHDFS>
+        <HdfsAddress></HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/mnt/data/lf_serv_pro/unload_hbase/shell/logs</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>15</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+
+    <column>
+        <!-- 手机号码(脱敏),使用排名 deviceNumberMi,rn -->
+        <rowkey>1,10</rowkey>
+        <!-- APP编码 prodId-->
+        <column1>2</column1> 
+        <!--APP名称 prodName -->
+        <column2>3</column2> 
+        <!-- APP一级标签名称 lableName1 -->
+        <column3>4</column3> 
+        <!-- APP二级标签名称 lableName2 -->
+        <column4>5</column4> 
+        <!-- 使用分档 totalFlow -->
+        <column5>11</column5> 
+        <!-- 省份 provId-->
+        <column6>14</column6> 
+    </column>
+
+    <table>
+        <TableName>weixin_app_top10</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

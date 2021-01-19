@@ -1,0 +1,47 @@
+日接口
+回收号码判断					insert-table-config-device-reuse-bak.xml
+地理位置mb(日)					insert-table-config-position-payeco-bak.xml
+地理位置cb(日)					insert-table-config-position-payeco-bak.xml
+蚂蚁金服日全量					insert-table-config-check-ant-bak.xml
+蚂蚁金服sha256					insert-table-config-check-ant-sha256-bak.xml
+拆机号码						insert-table-config-teradown-mobile-bak.xml
+在网号码						insert-table-config-device-innet-bak.xml
+渠道编码						insert-table-config-serv-channel-no-bak.xml
+
+月接口
+3无接口、用户极低信息查询		insert-table-config-lowerUser-info-bak.xml
+是否合约接口					insert-table-config-act-info-bak.xml
+滴滴防盗刷						insert-table-config-didi-credit-bak.xml
+最后一次活跃月份查询			insert-table-config-lastactive-serv-bak.xml
+是否融合接口					insert-table-config-comp-info-bak.xml
+欠费接口						insert-table-config-owe-fee-bak.xml
+近六个月欠费停机查询			insert-table-config-OwnFee-bak.xml
+漫游状态验证接口				insert-table-config-riskma-roamtype-bak.xml
+五元组查询						insert-table-config-term-change-bak.xml
+基于IMEI和IMSI查询年龄性别		insert-table-config-imei-imsi-bak.xml
+用户话费查询					insert-table-config-riskma-mobilebill-bak.xml
+沃信用分查询					insert-table-config-wo-credit-bak.xml
+用户话务、流量查询接口			insert-table-config-riskma-mobileuse-bak.xml
+用户行为评估					insert-table-config-behavior-payeco-bak.xml
+用户星级查询					insert-table-config-wo-levels-bak.xml
+职住地经纬度距离对比			insert-table-config-off-home-work-bak.xml
+用户目标月通话最多的城市		insert-table-config-riskma-czplace-bak.xml
+用户目标月通话最多的城市		insert-table-config-riskma-czplace-bak.xml
+用户有效交往圈评分				insert-table-config-con-bak.xml
+用户历史位置月比对(cb)			insert-table-config-position-payeco-bak.xml
+携号转网验证					insert-table-config-np-turn-bak.xml
+点点信用分APP3.0				insert-table-config-app-risk-bak.xml
+微信服务号APP流量				insert-table-config-weixin-app-top10-bak.xml
+用户主动联系借贷机构频次		insert-table-config-riskma-org-contact-bak.xml
+付费特征评分					insert-table-config-risk2-paymode-bak.xml
+华道风控模型-消费行为评分		insert-table-config-risk2-comm-bak.xml
+华道风控模型-漫游异常			insert-table-config-risk2-unus-roam-bak.xml
+职住地经纬度距离对比加密		insert-table-config-off-home-work-spare-bak.xml
+用户有效交往圈评分mb			insert-table-config-con-bak.xml
+用户历史位置月比对(mb)			insert-table-config-position-payeco-bak.xml
+用户话务、流量查询一年接口		insert-table-config-riskma-mobileyear-bak.xml
+用户90天内访问app以及网站次数	insert-table-config-yi-car-bak.xml
+固话在网时长					insert-table-cfx-innet-length-bak.xml
+
+
+

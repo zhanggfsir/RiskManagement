@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <!-- 最高法certno device查询，HBase备用库，配置插入字段 -->
+  <file>
+    <IsHDFS>true</IsHDFS><!-- 是否需要读取HDFS文件，进行接口入库-->
+    <HdfsAddress>hdfs://beh/</HdfsAddress><!-- HDFS文件地址，随集群的变化而变化-->
+    <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+    <LogPath>/home/lf_cp_serv/bin/log</LogPath><!-- 入库日志存放目录 -->
+    <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+    <Counts>3</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+    <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+    <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+    <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+  </file>
+   <column>
+    <!-- 证件号码 cert_no 大写 -->
+    <rowkey>0,1</rowkey>
+    <!--手机号-->
+    <column1>2</column1> 
+  </column>
+  <table>
+    <TableName>certno_device</TableName> <!-- 表名 -->
+    <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+    <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+  </table>
+  <zookeeper>
+    <Quorum></Quorum><!-- zookeeper主机 -->
+    <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+  </zookeeper>
+</root>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+    <file>
+        <IsHDFS>false</IsHDFS>
+        <HdfsAddress></hdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/data/lf_serv_pro/unload_hbase/shell/logs</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>20</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+
+    <column>
+         <!-- 手机号码（脱敏）telNo -->
+        <rowkey>2</rowkey>
+        <!-- 账期编码 MontId -->
+        <column1>0</column1>
+        <!-- 省分编码 ProvId -->
+        <column2>1</column2>
+        <!-- 信用额度  creditScore-->
+        <column3>3</column3>
+        <!-- 身份特质（一级主分，权重：5%）identityScore -->
+        <column4>4</column4>
+        <!-- 行为偏好（一级主分，权重：28%）behaviourScore -->
+        <column5>5</column5>
+        <!-- 信用历史（一级主分，权重：32%）credithisScore -->
+        <column6>6</column6>
+        <!-- 履约能力（一级主分，权重：24%）promiseScore -->
+        <column7>7</column7>
+        <!-- 人脉关系（一级主分，权重：11%）connectionScore`-->
+        <column8>8</column8>
+        <!-- 使用流量得分 totalfluxScore -->
+        <column9>9</column9>
+        <!-- 逾期欠费次数得分（履约能力得分组成项）overdueowecountScore -->
+        <column10>10</column10>
+        <!-- 产品类型得分（融合产品得分，按模型规则计算时为加分项）productclassScore -->
+        <column11>11</column11>
+        <!-- 在网时长得分（信用历史得分组成项）innetmonthScore --> 
+        <column12>12</column12>
+        <!-- 交往圈得分（人脉关系得分组成项）validcallringScore -->
+        <column13>13</column13>
+        <!-- 通话天数得分（行为偏好得分组成项）calldaysScore -->
+        <column14>14</column14>
+        <!-- 合约类型得分（暂未使用，计算总分时未加入）agreetypeScore -->
+        <column15>15</column15>
+        <!-- 缴费账期得分（暂未使用，计算总分时未加入）acctfeeScore --> 
+        <column16>16</column16>
+        <!-- 手机号作为网站账号得分（行为偏好得分组成项，按模型规则计算）isphoneScore -->
+        <column17>17</column17>
+        <!-- 支付方式得分（履约能力得分组成项，加分项，支付方式包括银行代扣、银行托收）bankbusikindScore -->
+        <column18>18</column18>
+        <!-- 国际漫游次数得分（行为偏好得分组成项，按模型规则计算时为加分项）gjroamcountScore -->
+        <column19>19</column19>
+    </column>
+
+    <table>
+        <TableName>wo_credit</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_zx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

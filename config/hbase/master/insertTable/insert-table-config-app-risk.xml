@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+    <file>
+        <IsHDFS>false</IsHDFS>
+        <HdfsAddress></hdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/data/lf_serv_pro/unload_hbase/shell/logs</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>12</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+       <column>
+        <!-- 服务号码 sendTel -->
+        <rowkey>0</rowkey>
+        <!-- 省分编码 -->
+        <column1>1</column1>
+        <!-- 可贷额度 -->
+        <column2>2</column2>
+        <!-- 用户真实度-->
+        <column3>3</column3>
+        <!-- 信用分值 -->
+        <column4>4</column4>
+        <!-- 身份特质分值 -->
+        <column5>5</column5>
+        <!-- 稳定度分值 -->
+        <column6>6</column6>
+        <!-- 消费能力分值 -->
+        <column7>7</column7>
+        <!-- 行为偏好分值 -->
+        <column8>8</column8>
+        <!-- 朋友圈分值 -->
+        <column9>9</column9>
+        <!-- 在网时长 -->
+        <column10>10</column10>
+        <!-- 等级次数 -->
+        <column11>11</column11> 
+   </column>
+    <table>
+        <TableName>app_risk</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_zx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

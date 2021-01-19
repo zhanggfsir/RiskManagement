@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <!-- 用户查询HBase主库的数据信息 -->
+    <table>
+       <TableName>all_tables_test</TableName><!-- 表名 -->
+       <FamilyName>f</FamilyName><!-- 列族 ,多列族以逗号分隔-->
+    </table>
+    <column>
+       <MaxVersion>3</MaxVersion><!-- 查询时返回的最大版本数 -->
+    </column>
+    <zookeeper>
+       <Quorum></Quorum><!-- zookeeper主机 -->
+       <Parent>/hbase_zx</Parent><!-- hbase在zookeeper上的存储目录 -->
+       <isCache>false</isCache><!-- 是否设置查询缓存，小量查询、多次复用建议开启；全表扫表，需要关闭 -->
+       <CachingNum>10000</CachingNum><!-- 多条查询时，每次获取的量 -->
+    </zookeeper>
+</root>

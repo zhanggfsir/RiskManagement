@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <!--阿里信用分-->
+    <file>
+        <IsHDFS>true</IsHDFS>
+        <HdfsAddress>hdfs://beh/</HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath></LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>4</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+    <column>
+       <!-- 手机号码（明文）sendTel -->
+        <rowkey>0,1</rowkey>
+        <!-- 模型标识 modelLabel-->
+        <column1>1</column1>
+        <!-- 安全分值  riskScore -->
+        <column2>2</column2>
+        <!--拓展字段extraInfo-->
+        <column3>3</column3>
+    </column>
+
+    <table>
+        <TableName>alibaba_score</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_zx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

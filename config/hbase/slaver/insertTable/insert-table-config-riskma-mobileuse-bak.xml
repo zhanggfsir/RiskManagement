@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<!--用户话务、流量查询接口-->
+    <file>
+        <IsHDFS>false</IsHDFS>
+        <HdfsAddress></HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/mnt/data/lf_serv_pro/unload_hbase/shell/logs</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>55</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+
+    <column>
+        <!-- 手机号码（脱敏）sendTel -->
+        <rowkey>3</rowkey>
+        <!-- 账期 monthId-->
+        <column1>0</column1> 
+        <!-- 省份 provId -->
+        <column2>1</column2> 
+        <!-- 地市 areaId-->
+        <column3>2</column3> 
+        <!-- 业务类型 serviceType-->
+        <column4>4</column4> 
+        <!-- 在网时长 innetMonths -->
+        <column5>5</column5> 
+        <!-- 是否在网 isInnet-->
+        <column6>6</column6> 
+        <!-- 当月流量 thisFlux -->
+        <column7>7</column7> 
+        <!-- 3个月流量 last3Flux-->
+        <column8>8</column8> 
+        <!-- 6个月流量 last6Flux -->
+        <column9>9</column9> 
+        <!-- 当月通话时长 thisTotaldura-->
+        <column10>10</column10> 
+        <!-- 当月被叫通话时长 thisIndura -->
+        <column11>11</column11> 
+        <!-- 当月主叫通话时长 thisOutdura-->
+        <column12>12</column12> 
+        <!-- 3个月通话时长 last3Totaldura -->
+        <column13>13</column13> 
+        <!-- 3个月被叫通话时长 last3Indura-->
+        <column14>14</column14> 
+        <!-- 3个月主叫通话 last3Outdura-->
+        <column15>15</column15> 
+        <!-- 6个月通话时长 last6Totaldura-->
+        <column16>16</column16> 
+        <!-- 6个月被叫通话时长 last6Indura -->
+        <column17>17</column17> 
+        <!-- 6个月主叫通话时长 last6Outdura-->
+        <column18>18</column18>  
+        <!-- 当月漫游流量 thisRoamflux -->
+        <column19>19</column19> 
+        <!-- 3个月漫游流量 last3Roamflux -->
+        <column20>20</column20> 
+        <!-- 6个月漫游流量 last6Roamflux -->
+        <column21>21</column21> 
+        <!-- 当月漫游通话时长 thisRoamdura --> 
+        <column22>22</column22> 
+        <!-- 3个月漫游通话时长 last3Roamdura -->
+        <column23>23</column23> 
+        <!-- 6个月漫游通话时长 last6Roamdura -->
+        <column24>24</column24> 
+        <!-- 当月本地通话时长 thisLocaldura -->
+        <column25>25</column25> 
+        <!-- 3个月本地通话时长 last3Localdual -->
+        <column26>26</column26> 
+        <!-- 6个月本地通话时长 last6Localdual -->
+        <column27>27</column27> 
+        <!-- 当月长途通话时长 thisTolldura -->
+        <column28>28</column28>  
+        <!-- 3个月长途通话时长 last3Tolldura -->
+        <column29>29</column29> 
+        <!-- 6个月长途通话时长 last6Tolldura -->
+        <column30>30</column30> 
+        <!-- 当月总短信条数 thisTotalsms -->
+        <column31>31</column31> 
+        <!-- 3个月总短信条数 last3Totalsms -->
+        <column32>32</column32> 
+        <!-- 6个月总短信条数 last6Totalsms -->
+        <column33>33</column33> 
+        <!-- 当月点对点短信条数 thisPtpsms -->
+        <column34>34</column34> 
+        <!-- 3个月点对点短信条数 last3Ptpsms -->
+        <column35>35</column35> 
+        <!-- 6个月点对点短信条数 last6Ptpsms -->
+        <column36>36</column36> 
+        <!-- 当月通话总次数 thisTotalnums -->
+        <column37>37</column37> 
+        <!-- 3个月通话总次数 last3Totalnums -->
+        <column38>38</column38> 
+        <!-- 6个月通话总次数 last6Totalnums -->
+        <column39>39</column39> 
+        <!-- 当月通话被叫次数  thisInnums-->
+        <column40>40</column40> 
+        <!-- 3个月通话被叫次数 last3Innums -->
+        <column41>41</column41> 
+        <!-- 6个月通话被叫次数 last6Innums -->
+        <column42>42</column42> 
+        <!-- 当月通话主叫次数 thisOutnums -->
+        <column43>43</column43> 
+        <!-- 3个月通话主叫次数 last3Outnums -->
+        <column44>44</column44> 
+        <!-- 6个月通话主叫次数 last6Outnums -->
+        <column45>45</column45> 
+        <!-- 当月漫游通话次数 thisRoamnums -->
+        <column46>46</column46> 
+        <!-- 3个月漫游通话次数 last3Roamnums -->
+        <column47>47</column47> 
+        <!-- 6个月漫游通话次数 last6Roamnums -->
+        <column48>48</column48> 
+        <!-- 当月本地通话次数 thisLocalnums -->
+        <column49>49</column49> 
+        <!-- 3个月本地通话次数 last3Localnums-->
+        <column50>50</column50> 
+        <!-- 6个月本地通话次数 last6Localnums -->
+        <column51>51</column51> 
+        <!-- 当月长途通话次数 thisTollnums -->
+        <column52>52</column52> 
+        <!-- 3个月长途通话次数 last3Tollnums -->
+        <column53>53</column53> 
+        <!-- 6个月长途通话次数 last6Tollnums-->
+        <column54>54</column54> 
+    </column>
+
+    <table>
+        <TableName>riskma_mobileuse</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

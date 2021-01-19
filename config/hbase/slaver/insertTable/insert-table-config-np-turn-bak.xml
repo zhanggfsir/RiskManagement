@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+    <file>
+        <IsHDFS>false</IsHDFS>
+        <HdfsAddress></HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/mnt/data/lf_serv_pro/unload_hbase/shell/logs</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>9</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+
+    <column>
+        <!-- 手机号码 sendTel -->
+        <rowkey>3</rowkey> 
+        <!-- 账期 monthId-->
+        <column1>0</column1> 
+        <!-- 省份编码 provId -->
+        <column2>1</column2> 
+        <!-- 地市编码 areaId-->
+        <column3>2</column3> 
+        <!-- 归属运营商 belongDealer -->
+        <column4>4</column4> 
+        <!-- 转出运营商 turnOutdealer-->
+        <column5>5</column5> 
+        <!-- 转入运营商 turnIndealer-->
+        <column6>6</column6> 
+        <!-- 受理时间 applyDate-->
+        <column7>7</column7> 
+        <!-- 生效时间 effectDate -->
+        <column8>8</column8> 
+    </column>
+
+    <table>
+        <TableName>np_turn</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

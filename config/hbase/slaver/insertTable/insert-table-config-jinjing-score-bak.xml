@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <!--晋景数据模型分-->
+    <file>
+        <IsHDFS>false</IsHDFS>
+        <HdfsAddress></HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/mnt/data/lf_serv_pro/unload_hbase/shell/logs</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>11</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+
+    <column>
+        <!-- 服务号码(密文) sendTel -->
+        <rowkey>1</rowkey> 
+        <!-- 号码表现分 tag01 -->
+        <column1>2</column1> 
+        <!-- 通信综合分 tag02 -->
+        <column2>3</column2> 
+        <!-- 通信（近期）活跃度 tag03 -->
+        <column3>4</column3> 
+        <!-- 通信（长期）活跃度 tag04 -->
+        <column4>5</column4> 
+        <!-- 客户消费评价 tag05 -->
+        <column5>6</column5> 
+        <!-- 客户个性评价 tag06 -->
+        <column6>7</column6> 
+        <!-- 客户行为评价 tag07 -->
+        <column7>8</column7> 
+        <!-- 客户个性评价分2 tag08 -->
+        <column8>9</column8> 
+        <!-- 客户品牌偏好 tag09 -->
+        <column9>10</column9> 
+    </column>
+
+    <table>
+        <TableName>jinjing_score</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

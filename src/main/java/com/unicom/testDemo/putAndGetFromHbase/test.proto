@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package com.unicom.testDemo.putAndGetFromHbase;
+
+///////////////////////////////////////////////////////////////////////////////
+// 手机号查询日表
+// 用户信息 日表 
+// 表: zhanggf_test
+// 列: f:mc
+// 数据样例 lizongsheng|男|90|50.0
+// rowkey: name,yyyyMMdd
+message Actor {
+    optional string sex          = 1 ; // 性别
+    optional int32  score        = 2 ; // 得分
+    required int32  age     	 = 3 ; // 年龄
+};

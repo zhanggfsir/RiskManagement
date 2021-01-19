@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<!--近六个月欠费停机查询-->
+    <file>
+        <IsHDFS>false</IsHDFS>
+        <HdfsAddress></HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/mnt/data/lf_serv_pro/unload_hbase/shell/logs</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>14</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+
+    <column>
+        <!-- 服务号码  -->
+        <rowkey>4</rowkey>
+        <!-- 月份 MONTH_ID -->
+        <column1>0</column1> 
+        <!-- 省分编码 Prov_Id -->
+        <column2>1</column2> 
+	<!-- 地市 AREA_ID-->
+        <column3>2</column3> 
+	<!-- USER_ID 订购实例标识 -->
+        <column4>3</column4> 
+	<!-- DEVICE_NUMBER 服务号码-->
+        <column5>4</column5> 
+	<!-- 服务号码密文 DEVICE_NUMBER_EN-->
+        <column6>5</column6> 
+	<!-- 业务类型 SERVICE_TYPE -->
+        <column7>6</column7> 
+        <!-- 是否本月停机，最后一次停机时间与本月账期相同  IS_THIS_STOP-->
+        <column8>7</column8> 
+       <!-- 近1月的停机次数，近1月不同账期数据最后一次停机时间（剃重）STOP_HIS01_CNT -->
+        <column9>8</column9> 
+       <!-- 近2月的停机次数，近2月不同账期数据最后一次停机时间（剃重）STOP_HIS02_CNT -->
+        <column10>9</column10> 
+       <!-- 近3月的停机次数，近3月不同账期数据最后一次停机时间（剃重）STOP_HIS03_CNT -->
+        <column11>10</column11> 
+       <!-- 近4月的停机次数，近4月不同账期数据最后一次停机时间（剃重）STOP_HIS04_CNT -->
+        <column12>11</column12> 
+       <!-- 近5月的停机次数，近1月不同账期数据最后一次停机时间（剃重）STOP_HIS05_CNT -->
+        <column13>12</column13> 
+       <!-- 近6月的停机次数，近6月不同账期数据最后一次停机时间（剃重）STOP_HIS06_CNT -->
+        <column14>13</column14> 
+       
+
+    </column>
+
+    <table>
+        <TableName>ownfee</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

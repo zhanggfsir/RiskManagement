@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+    <file>
+        <IsHDFS>false</IsHDFS>
+        <HdfsAddress></hdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/data/lf_serv_pro/unload_hbase/shell/logs</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>12</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+
+    <column>
+        <!-- 手机号码 sendNo -->
+        <rowkey>3</rowkey>
+        <!-- 账期编码 MontId -->
+        <column1>0</column1>
+        <!-- 省分编码 ProvId -->
+        <column2>1</column2>
+	<!-- 地市 areaId-->
+        <column3>4</column3>
+	<!-- 业务类型 serviceType-->
+        <column4>5</column4>
+	<!-- 用户等级 userLevel-->
+        <column5>6</column5>
+	<!-- 用户等级时间 userLeveltime-->
+        <column6>7</column6>
+	<!-- 用户标识（脱敏） userIden -->
+        <column7>2</column7>
+	<!-- 服务号码（脱敏）deviceNumberen-->
+        <column8>3</column8>
+	<!-- 是否 集团 isGroup-->
+        <column9>11</column9>
+    </column>
+
+    <table>
+        <TableName>wo_levels</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_zx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

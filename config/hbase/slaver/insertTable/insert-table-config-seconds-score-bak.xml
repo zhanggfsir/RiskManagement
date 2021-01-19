@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+    <file>
+        <IsHDFS>true</IsHDFS>
+        <HdfsAddress>hdfs://beh/</HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath></LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>32</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>gz</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+    <column>
+    <!-- 手机号码（脱敏）telNo -->
+    <rowkey>0</rowkey> 
+    <!-- total_call_count -->
+    <column1>1</column1> 
+    <!-- called_rate_str  -->
+    <column2>2</column2> 
+    <column3>3</column3> 
+	<column4>4</column4> 
+	<column5>5</column5> 
+	<column6>6</column6> 
+	<column7>7</column7> 
+	<column8>8</column8> 
+	<column9>9</column9> 
+	<column10>10</column10> 
+	<column11>11</column11> 
+	<column12>12</column12> 
+	<column13>13</column13> 
+	<column14>14</column14> 
+	<column15>15</column15> 
+	<column16>16</column16> 
+	<column17>17</column17> 
+	<column18>18</column18> 
+	<column19>19</column19> 
+	<column20>20</column20> 
+	<column21>21</column21> 
+	<column22>22</column22> 
+	<column23>23</column23> 
+	<column24>24</column24> 
+	<column25>25</column25> 
+	<column26>26</column26> 
+	<column27>27</column27> 
+	<column28>28</column28> 
+	<column29>29</column29> 
+       <column30>30</column30> 
+       <column31>31</column31> 
+  </column>
+    <table>
+        <TableName>seconds_score</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

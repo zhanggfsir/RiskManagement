@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <!-- 服务于蚂蚁金服等服务，HBase主用库，配置插入字段 -->
+  <file>
+    <IsHDFS>true</IsHDFS><!-- 是否需要读取HDFS文件，进行接口入库-->
+    <HdfsAddress>hdfs://beh/</HdfsAddress><!-- HDFS文件地址，随集群的变化而变化-->
+    <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+    <LogPath>/home/lf_cp_serv/bin/log</LogPath><!-- 入库日志存放目录 -->
+    <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+    <Counts>44</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+    <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+    <CompressType>gz</CompressType><!-- txt、gz、bzip2 -->
+    <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+  </file>
+  <column>
+    <!-- 手机号码（脱敏）telNo -->
+    <rowkey>3</rowkey>
+    <!-- 姓名 custName -->
+    <column1>8</column1>
+    <!-- 证件号码 certNo -->
+    <column2>9</column2>
+    <!-- 是否在网 isInnet-->
+    <column3>16</column3>
+    <!-- 销户时间 closeDate -->
+    <column4>17</column4>
+    <!-- 是否过滤用户 isFilter -->
+    <column5>18</column5>
+    <!-- 手机状态 userStatus-->
+    <column6>19</column6>
+    <!-- 证件类型 certType -->
+    <column7>20</column7>
+    <!-- 在网时长 innetMonths -->
+    <column8>21</column8>
+    <!-- 对应机主下手机号数量 -->
+    <column9>22</column9>
+    <!-- 在网时长（月）innetMonth -->
+    <column10>23</column10>
+    <!-- 用户状态（细分）userStatusxf -->
+    <column11>24</column11>
+    <!-- 入网时间 innetDate -->
+    <column12>25</column12>
+    <!-- 是否实名制 isTrue -->
+    <column13>26</column13>
+    <!-- 同一身份证下对应的号码数 -->
+    <column14>31</column14>
+    <!-- 性别 custSex -->
+    <column15>33</column15>
+    <!-- 年龄 custAge -->
+    <column16>34</column16>
+    <!-- 省份 provId -->
+    <column17>38</column17>
+    <!-- 地市 areaId -->
+    <column18>0</column18>
+    <!-- 付费模式 payMode -->
+    <column19>35</column19>
+	<!-- 是否上网卡 is_card -->
+    <column20>15</column20>
+  </column>
+  <table>
+    <TableName>user_check</TableName> <!-- 表名 -->
+    <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+    <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+  </table>
+  <zookeeper>
+    <Quorum></Quorum><!-- zookeeper主机 -->
+    <Parent>/hbase_zx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+  </zookeeper>
+</root>

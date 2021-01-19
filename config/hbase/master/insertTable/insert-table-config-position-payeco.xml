@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+    <file>
+        <IsHDFS>true</IsHDFS>
+        <HdfsAddress>hdfs://beh/</HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/home/lf_cp_serv/bin/log</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>11</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>gz</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>true</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+
+    <column>
+        <!-- 手机号码（加密） month_id day_id -->
+        <rowkey>2,0,10</rowkey>
+	<!-- 省分-->
+        <column1>7</column1>
+	<!-- 通话基站归属地市 -->
+        <column2>6</column2>
+	<!-- 漫游国家编码-->
+        <column3>8</column3>
+    </column>
+
+    <table>
+        <TableName>payeco_position_new</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_zx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

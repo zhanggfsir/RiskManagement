@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <!-- 用于删除HBase主库的数据表 -->
+    <table>
+        <TableName>user_check_test</TableName><!-- 表名，多个以逗号分隔 -->
+    </table>
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_zx</Parent><!-- hbase在zookeeper上的存储目录，多个以逗号分隔 -->
+    </zookeeper>
+</root>

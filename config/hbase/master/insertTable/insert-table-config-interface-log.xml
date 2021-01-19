@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <!-- 计次平台日志，配置插入字段 -->
+  <file>
+    <IsHDFS>true</IsHDFS><!-- 是否需要读取HDFS文件，进行接口入库-->
+    <HdfsAddress>hdfs://beh/</HdfsAddress><!-- HDFS文件地址，随集群的变化而变化-->
+    <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+    <LogPath>/home/lf_cp_serv/bin/log</LogPath><!-- 入库日志存放目录 -->
+    <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+    <Counts>13</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+    <ThreadNum>2</ThreadNum><!-- 解析文件入库的线程数 -->
+    <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+    <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+  </file>
+  <column>
+    <!-- 密文号码,调用时间-->
+    <rowkey>4,0</rowkey>
+    <!--调用时间格式-->
+    <column1>0</column1> 
+    <!--客户账号-->
+    <column2>1</column2> 
+    <!--调用明细-->
+    <column3>2</column3> 
+    <!--加密前号码-->
+    <column4>3</column4> 
+    <!--密文号码-->
+    <column5>4</column5> 
+    <!--运营商-->
+    <column6>5</column6> 
+    <!--调用时间-->
+    <column7>6</column7> 
+    <!--接口代码-->
+    <column8>7</column8> 
+    <!--接口类别-->
+    <column9>8</column9> 
+    <!--计费码-->
+    <column10>9</column10> 
+    <!--状态码-->
+    <column11>10</column11> 
+    <!--返回明细-->
+    <column12>11</column12> 
+    <!--响应时间-->
+    <column13>12</column13> 
+  </column>
+  <table>
+    <TableName>interface_log</TableName> <!-- 表名 -->
+    <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+    <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+  </table>
+  <zookeeper>
+    <Quorum></Quorum><!-- zookeeper主机 -->
+    <Parent>/hbase_zx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+  </zookeeper>
+</root>

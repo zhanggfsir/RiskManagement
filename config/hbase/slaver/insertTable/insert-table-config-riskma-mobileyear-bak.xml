@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<!--用户话务、流量查询一年接口-->
+    <file>
+        <IsHDFS>false</IsHDFS>
+        <HdfsAddress></HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/mnt/data/lf_serv_pro/unload_hbase/shell/logs</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>28</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+    <column>
+        <!-- 手机号码（脱敏）sendTel -->
+        <rowkey>24</rowkey>
+        <!-- 地市areaId-->
+        <column1>0</column1> 
+        <!-- 手机号码明文device_bigint -->
+        <column2>1</column2> 
+        <!-- 用户标识userId-->
+        <column3>2</column3> 
+        <!-- 业务类型serviceType -->
+        <column4>3</column4> 
+        <!-- 入网时间innet_months-->
+        <column5>4</column5> 
+        <!--是否在网is_innet -->
+        <column6>5</column6> 
+        <!-- 近一年使用总流量last_year_flux-->
+        <column7>6</column7> 
+        <!-- 近一年通话总时长last_year_dura -->
+        <column8>7</column8> 
+        <!--近一年被叫通话总时长last_year_in_dura-->
+        <column9>8</column9> 
+        <!-- 近一年主叫叫通话总时长 last_year_out_dura -->
+        <column10>9</column10> 
+        <!--近一年通话总次数last_year_total_nums-->
+        <column11>10</column11> 
+        <!-- 近一年被叫通话总次数last_year_in_nums -->
+        <column12>11</column12> 
+        <!-- 近一年主叫通话总次数last_year_out_nums-->
+        <column13>12</column13> 
+        <!--近一年漫游总流量last_year_roam_flux -->
+        <column14>13</column14> 
+        <!-- 近一年漫游通话总时长last_year_roam_dura-->
+        <column15>14</column15> 
+        <!-- 近一年漫游通话总次数last_year_roam_nums -->
+        <column16>15</column16> 
+        <!--近一年本地通话总时长last_year_local_dura-->
+        <column17>16</column17> 
+        <!--近一年长途通话总时长last_year_toll_dura -->
+        <column18>17</column18> 
+        <!--近一年本地通话总次数last_year_local_nums-->
+        <column19>18</column19> 
+        <!--近一年长途通话总次数 last_year_toll_nums -->
+        <column20>19</column20> 
+        <!--进一年短信总数last_year_total_sms_num-->
+        <column21>20</column21> 
+        <!--进一年ptp短信总数last_year_ptp_sms_num-->
+        <column22>21</column22> 
+        <!--近一年ptp发出短信总数last_year_ptp_out_num-->
+        <column23>22</column23> 
+        <!-- 近一年ptp接收短信总数last_year_ptp_in_num -->
+        <column24>23</column24> 
+        <!--用户标识加密user_id_en-->
+        <column25>25</column25> 
+        <!-- 账期 monthId-->
+        <column26>26</column26> 
+        <!-- 省份 provId -->
+        <column27>27</column27> 
+    </column>
+
+    <table>
+        <TableName>riskma_mobileyear</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<!--用户主动联系借贷机构频次-->
+    <file>
+        <IsHDFS>false</IsHDFS>
+        <HdfsAddress></HdfsAddress>
+        <FilePath></FilePath><!-- 要入库的文件路径:请使用绝对路径 -->
+        <LogPath>/data/lf_serv_pro/unload_hbase/logs</LogPath>
+        <Seperator>\|</Seperator><!-- 文件记录的分割符  逗号用，句号用\.竖杠用\| -->
+        <Counts>9</Counts><!-- 文件按照分割符分割出的总字段个数 -->
+        <ThreadNum>4</ThreadNum><!-- 解析文件入库的线程数 -->
+        <CompressType>txt</CompressType><!-- txt、gz、bzip2 -->
+        <UniqueID>false</UniqueID><!-- 是否需要唯一标识每一行数据 -->
+    </file>
+
+    <column>
+        <!-- 手机号码（脱敏）sendTel -->
+        <rowkey>2</rowkey>
+        <!-- 账期 monthId-->
+        <column1>0</column1> 
+        <!-- 省份 provId -->
+        <column2>1</column2> 
+        <!-- 手机号码（脱敏）sendTel-->
+        <column3>2</column3> 
+        <!-- 通话总次数 contactTimes-->
+        <column4>3</column4> 
+        <!-- 主叫通话次数 contactTimesout-->
+        <column5>4</column5> 
+        <!-- 被叫通话次数 contactTimesin -->
+        <column6>5</column6> 
+        <!-- 通话总时长 callDuration-->
+        <column7>6</column7> 
+        <!-- 主叫通话时长 callDurationout-->
+        <column8>7</column8> 
+        <!-- 被叫通话时长 callDurationin-->
+        <column9>8</column9> 
+    </column>
+
+    <table>
+        <TableName>riskma_org_contact</TableName> <!-- 表名 -->
+        <FamilyName>f</FamilyName> <!-- 列族：暂时只支持一个 -->
+        <BatchCount>5000</BatchCount> <!-- 多少条一提交 -->
+    </table>
+
+    <zookeeper>
+        <Quorum></Quorum><!-- zookeeper主机 -->
+        <Parent>/hbase_cx</Parent><!-- hbase在zookeeper上的存储目录:可当做是库名 -->
+    </zookeeper>
+
+</root>
